@@ -1,0 +1,35 @@
+/* Dropdown menu styles for navigation */
+.masthead__menu-item.has-dropdown {
+  position: relative;
+}
+.masthead__menu-item .dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 1000;
+  padding: 0.5em 0;
+  border-radius: 0 0 6px 6px;
+  flex-direction: column;
+}
+.masthead__menu-item.has-dropdown:hover .dropdown,
+.masthead__menu-item.has-dropdown:focus-within .dropdown {
+  display: flex;
+}
+.masthead__menu-item .dropdown li {
+  list-style: none;
+}
+.masthead__menu-item .dropdown a {
+  display: block;
+  padding: 0.5em 1.2em;
+  color: #222;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.masthead__menu-item .dropdown a:hover {
+  background: #f5f5f5;
+  color: #007acc;
+}

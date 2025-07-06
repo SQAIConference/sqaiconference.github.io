@@ -1,0 +1,187 @@
+/* 
+ * Mobile-friendly important dates styles 
+ * Creates an in-page collapsible section for important dates on mobile
+ */
+
+/* Mobile inline dates section that's embedded in the content */
+.mobile-dates-section {
+  display: none; /* 默认在桌面上隐藏 */
+  margin: 0 0 2em;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.09);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.mobile-dates-header {
+  background: #1e3148;
+  color: white;
+  padding: 12px 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-dates-header i {
+  transition: transform 0.3s ease;
+}
+
+.mobile-dates-header.collapsed i {
+  transform: rotate(-180deg);
+}
+
+.mobile-dates-content {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #fff;
+  padding: 0;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-dates-content.collapsed {
+  max-height: 0;
+}
+
+/* 分类标签快速导航 */
+.mobile-dates-tabs {
+  display: flex;
+  overflow-x: auto;
+  background: #f5f8fa;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 10px;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+}
+
+.mobile-dates-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.mobile-dates-tabs .date-tab {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0,0,0,0.07);
+}
+
+.mobile-dates-tabs .date-tab.active {
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 匹配 SQAI 类别的颜色 */
+.mobile-dates-tabs .date-tab[data-category="sqai-a"].active {
+  background: #2196f3;
+  border-color: #2196f3;
+}
+
+.mobile-dates-tabs .date-tab[data-category="sqai-b"].active {
+  background: #03a9f4;
+  border-color: #03a9f4;
+}
+
+.mobile-dates-tabs .date-tab[data-category="sqai-c"].active {
+  background: #00bcd4;
+  border-color: #00bcd4;
+}
+
+.mobile-dates-tabs .date-tab[data-category="sqai-d"].active {
+  background: #009688;
+  border-color: #009688;
+}
+
+.mobile-dates-tabs .date-tab[data-category="general"].active {
+  background: #546e7a;
+  border-color: #546e7a;
+}
+
+/* 日期内容部分 */
+.mobile-dates-body {
+  padding: 10px 15px;
+}
+
+.mobile-category-content {
+  display: none; /* 默认隐藏所有类别 */
+}
+
+.mobile-category-content.active {
+  display: block; /* 显示当前选中的类别 */
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* 改进浮动按钮样式 */
+.mobile-dates-toggle {
+  display: none !important; /* 默认隐藏，只在移动设备上显示 */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed; /* 确保定位属性 */
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2196f3;
+  color: white;
+  box-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
+  z-index: 9000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: pulseButton 2s infinite, fadeInButton 0.5s forwards 1s;
+}
+
+.mobile-dates-toggle i {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.mobile-dates-toggle-text {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.mobile-dates-toggle:hover, .mobile-dates-toggle:active {
+  transform: scale(1.05);
+  background: #1976d2;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInButton {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes pulseButton {
+  0% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(33, 150, 243, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0); }
+}
+
+/* 媒体查询 */
+@media (max-width: 1100px) {
+  .mobile-dates-section {
+    display: block;
+  }
+  
+  /* 只在移动设备上显示浮动按钮 */
+  .mobile-dates-toggle {
+    display: flex !important;
+  }
+}

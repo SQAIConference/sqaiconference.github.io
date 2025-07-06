@@ -1,0 +1,84 @@
+/* 
+ * 移动设备优化样式 
+ * 解决在小屏幕设备上需要缩放的问题
+ */
+
+/* 修复内容宽度问题，确保所有内容适应屏幕 */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page__content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 确保表格和其他宽内容适应屏幕 */
+table, iframe, img, .highlight {
+  max-width: 100% !important;
+  overflow-x: auto;
+}
+
+/* 调整谷歌表格iframe */
+iframe[src*="docs.google.com"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+/* 调整小屏幕上的卡片宽度 */
+@media (max-width: 576px) {
+  .member-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .committee-members {
+    justify-content: center;
+  }
+  
+  .member-photo {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  /* 调整导航按钮和链接在超小屏幕上的显示 */
+  .quick-nav-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .quick-nav-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .quick-nav-link {
+    margin: 5px;
+    text-align: center;
+  }
+}
+
+/* 调整特别小的屏幕 */
+@media (max-width: 360px) {
+  h1, h2 {
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* 减小内边距以节省空间 */
+  .page__content {
+    padding: 1em 1em !important;
+  }
+  
+  /* 调整导航按钮 */
+  .masthead__menu-item {
+    padding: 0.4em 0.5em;
+  }
+}

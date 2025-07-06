@@ -1,0 +1,277 @@
+/**
+ * SQAI 2026 Countdown Timer Styles
+ * Using the site color scheme: #56a3b7, #98d4dc
+ * CSS animation fallback for when JavaScript doesn't work
+ */
+
+/* Seconds scrolling animation - only used as fallback when JavaScript isn't working */
+@keyframes seconds-fallback {
+  0% { opacity: 1; content: "00"; }
+  1% { opacity: 0.9; content: "59"; }
+  2% { opacity: 0.9; content: "58"; }
+  3% { opacity: 0.9; content: "57"; }
+  4% { opacity: 0.9; content: "56"; }
+  5% { opacity: 0.9; content: "55"; }
+  6% { opacity: 0.9; content: "54"; }
+  7% { opacity: 0.9; content: "53"; }
+  8% { opacity: 0.9; content: "52"; }
+  9% { opacity: 0.9; content: "51"; }
+  10% { opacity: 0.9; content: "50"; }
+  11% { opacity: 0.9; content: "49"; }
+  12% { opacity: 0.9; content: "48"; }
+  13% { opacity: 0.9; content: "47"; }
+  14% { opacity: 0.9; content: "46"; }
+  15% { opacity: 0.9; content: "45"; }
+  16% { opacity: 0.9; content: "44"; }
+  17% { opacity: 0.9; content: "43"; }
+  18% { opacity: 0.9; content: "42"; }
+  19% { opacity: 0.9; content: "41"; }
+  20% { opacity: 0.9; content: "40"; }
+  21% { opacity: 0.9; content: "39"; }
+  22% { opacity: 0.9; content: "38"; }
+  23% { opacity: 0.9; content: "37"; }
+  24% { opacity: 0.9; content: "36"; }
+  25% { opacity: 0.9; content: "35"; }
+  26% { opacity: 0.9; content: "34"; }
+  27% { opacity: 0.9; content: "33"; }
+  28% { opacity: 0.9; content: "32"; }
+  29% { opacity: 0.9; content: "31"; }
+  30% { opacity: 0.9; content: "30"; }
+  31% { opacity: 0.9; content: "29"; }
+  32% { opacity: 0.9; content: "28"; }
+  33% { opacity: 0.9; content: "27"; }
+  34% { opacity: 0.9; content: "26"; }
+  35% { opacity: 0.9; content: "25"; }
+  36% { opacity: 0.9; content: "24"; }
+  37% { opacity: 0.9; content: "23"; }
+  38% { opacity: 0.9; content: "22"; }
+  39% { opacity: 0.9; content: "21"; }
+  40% { opacity: 0.9; content: "20"; }
+  41% { opacity: 0.9; content: "19"; }
+  42% { opacity: 0.9; content: "18"; }
+  43% { opacity: 0.9; content: "17"; }
+  44% { opacity: 0.9; content: "16"; }
+  45% { opacity: 0.9; content: "15"; }
+  46% { opacity: 0.9; content: "14"; }
+  47% { opacity: 0.9; content: "13"; }
+  48% { opacity: 0.9; content: "12"; }
+  49% { opacity: 0.9; content: "11"; }
+  50% { opacity: 0.9; content: "10"; }
+  51% { opacity: 0.9; content: "09"; }
+  52% { opacity: 0.9; content: "08"; }
+  53% { opacity: 0.9; content: "07"; }
+  54% { opacity: 0.9; content: "06"; }
+  55% { opacity: 0.9; content: "05"; }
+  56% { opacity: 0.9; content: "04"; }
+  57% { opacity: 0.9; content: "03"; }
+  58% { opacity: 0.9; content: "02"; }
+  59% { opacity: 0.9; content: "01"; }
+  60% { opacity: 1; content: "00"; }
+  100% { opacity: 1; content: "00"; }
+}
+
+/* 为秒数元素添加备选动画 */
+#countdown-seconds.js-disabled::before {
+  content: "00";
+  animation: seconds-fallback 60s infinite linear;
+  display: block;
+}
+
+#countdown-seconds.js-disabled {
+  color: transparent;
+}
+
+/* 60秒后，如果JavaScript没有设置秒数，启用CSS动画 */
+#countdown-seconds {
+  position: relative;
+}
+
+#countdown-seconds::before {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 给予JavaScript 5秒的加载时间，然后激活CSS动画 */
+@media (min-width: 1px) {
+  #countdown-seconds {
+    animation: enable-css-fallback 5s forwards;
+  }
+}
+
+@keyframes enable-css-fallback {
+  0%, 99% {
+    /* 什么都不做，给JavaScript时间来更新 */
+  }
+  100% {
+    /* 如果5秒后秒数仍然是00，添加CSS动画备选方案类 */
+    animation: check-for-js 1s forwards;
+  }
+}
+
+@keyframes check-for-js {
+  to {
+    /* 这将在5秒后执行一次性检查 */
+    /* 类将通过JavaScript删除，如果它正在工作 */
+  }
+}
+
+.countdown-container {
+  background: linear-gradient(135deg, #56a3b7, #98d4dc);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  color: white;
+}
+
+.countdown-title {
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-event {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+
+.countdown-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 0;
+  width: 100%;
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1) inset;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.countdown-animate {
+  animation: countdown-pulse 0.5s;
+}
+
+@keyframes countdown-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.countdown-location {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.countdown-location span {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.countdown-location i {
+  margin-right: 5px;
+}
+
+.countdown-ended {
+  padding: 20px;
+  text-align: center;
+}
+
+.countdown-ended h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 600;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+  .countdown-timer {
+    gap: 10px;
+  }
+  
+  .countdown-block {
+    min-width: 60px;
+  }
+  
+  .countdown-value {
+    font-size: 2rem;
+    padding: 8px 0;
+  }
+  
+  .countdown-title {
+    font-size: 1.3rem;
+  }
+  
+  .countdown-event {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-block {
+    min-width: 55px;
+  }
+  
+  .countdown-value {
+    font-size: 1.8rem;
+    padding: 6px 0;
+  }
+  
+  .countdown-location {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .countdown-location span {
+    margin: 2px 0;
+  }
+}

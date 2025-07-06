@@ -1,0 +1,59 @@
+/* 语言切换按钮样式 */
+.lang-switch {
+  margin-left: 15px;
+}
+
+.tail {
+  margin-left: auto;
+}
+
+.lang-switch a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background-color: #98d4dc;
+  color: #333 !important;
+  font-weight: 500;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.lang-switch a:hover {
+  background-color: #7abbc4;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.lang-icon {
+  display: inline-block;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .lang-switch {
+    margin-left: 10px;
+  }
+  
+  .lang-switch a {
+    padding: 4px 8px;
+    font-size: 0.85em;
+  }
+}
+
+/* 确保在小屏幕上仍然显示 */
+@media (max-width: 600px) {
+  .greedy-nav .visible-links li.lang-switch {
+    display: inline-block !important;
+    position: absolute;
+    right: 60px;
+    top: 0;
+    height: 100%;
+  }
+  
+  .lang-switch a {
+    height: 30px;
+    margin-top: 5px;
+  }
+}

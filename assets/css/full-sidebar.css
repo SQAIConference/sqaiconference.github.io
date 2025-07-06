@@ -1,0 +1,287 @@
+/* 全高度右侧边栏样式 */
+.sqai-dates-fixed-sidebar {
+  position: fixed;
+  top: 60px; /* 从导航栏下方开始 */
+  right: 0;
+  width: 250px; /* 减小宽度，避免占用太多主内容空间 */
+  z-index: 1000;
+  background: transparent; /* 移除白色背景 */
+  border-left: none; /* 移除边框 */
+  box-shadow: none; /* 移除阴影 */
+  padding: 0;
+  margin: 0;
+  height: calc(100vh - 60px); /* 覆盖从导航栏底部到页面底部的整个高度 */
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+  scrollbar-width: thin;
+}
+
+/* 内容容器样式 */
+.sidebar-inner {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* 添加内部阴影暗示可滚动性 */
+  background: linear-gradient(to bottom, 
+    rgba(255,255,255,0.98) 0%,
+    rgba(255,255,255,0.95) 98%,
+    rgba(255,255,255,0.85) 100%
+  );
+  background: transparent;
+}
+
+/* 自定义滚动条 */
+.sqai-dates-fixed-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sqai-dates-fixed-sidebar::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.sqai-dates-fixed-sidebar::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 4px;
+}
+
+.sqai-dates-fixed-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 标题样式 - 简化版本 */
+/* 注释掉旧的标题样式
+.sidebar-header {
+  position: sticky;
+  top: 0;
+  background: #1e3148;
+  color: white;
+  padding: 1.2em 1.5em;
+  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 2;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.sidebar-header h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #4bb6ef;
+}
+*/
+
+/* 新的简化标题样式 */
+.sidebar-title {
+  font-size: 1.3rem;
+  color: #1e3148; /* 深蓝色文字 */
+  margin: 0.8em 1em 1.5em 1em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* 日期列表样式 */
+.important-dates-list {
+  list-style: none;
+  margin: 0 15px;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.important-dates-list li {
+  position: relative;
+  margin: 0 0 15px 0;
+  padding: 16px 20px;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 8px;
+}
+
+/* 给列表项目添加白色背景和边框，增强可读性 */
+.date-item {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+}
+
+.date-item:hover {
+  background: #f0f7ff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.important-dates-list li:hover {
+  transform: none; /* 移除悬停时的上移效果 */
+  box-shadow: none;
+}
+
+/* 图标样式 - 不使用背景色 */
+.date-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  flex-shrink: 0;
+  font-size: 1.1em;
+}
+
+/* 移除特定类型图标的背景色 */
+.submission .date-icon,
+.notification .date-icon,
+.camera-ready .date-icon,
+.conference .date-icon {
+  /* 不再使用背景色和阴影 */
+}
+
+/* 内容样式 - 匹配图片中的设计 */
+.date-content {
+  flex-grow: 1;
+}
+
+.date-label {
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.92em;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Mini SQAI tag style */
+.sqai-tag-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+/* SQAI Event Tag Colors - Matched with event table and feature cards */
+.sqai-a-mini {
+  background: #2196f3; /* Academic Conference - Blue */
+}
+
+.sqai-b-mini {
+  background: #03a9f4; /* Business Expo - Light Blue */
+}
+
+.sqai-c-mini {
+  background: #00bcd4; /* Capitol Summit - Cyan */
+}
+
+.sqai-d-mini {
+  background: #009688; /* Digital Access - Teal */
+}
+
+.date-value {
+  color: #333;
+  font-weight: 700;
+  font-size: 1.05em;
+  letter-spacing: -0.01em;
+}
+
+/* 底部内容 - 已移除
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1.2em;
+  background: #f8f9fa;
+  font-size: 0.85em;
+  color: #666;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+*/
+
+/* 适配不同屏幕尺寸 */
+@media (max-width: 1200px) {
+  .sqai-dates-fixed-sidebar {
+    width: 220px; /* 调整为更小的宽度 */
+  }
+}
+
+@media (max-width: 1100px) {
+  .sqai-dates-fixed-sidebar {
+    display: none;
+  }
+  
+  /* 当点击按钮显示时覆盖上面的display:none */
+  .sqai-dates-fixed-sidebar.mobile-visible {
+    display: block;
+  }
+}
+
+/* 不调整主内容区域位置，让侧边栏覆盖但不重叠核心内容 */
+@media (min-width: 1101px) {
+  /* 侧边栏调整 */
+  .sqai-dates-fixed-sidebar {
+    z-index: 900; /* 确保它位于导航栏下方，但在大多数内容上方 */
+    pointer-events: auto; /* 确保侧边栏可以接收鼠标事件 */
+  }
+  
+  /* 设置主要容器的最大宽度，确保核心内容不会被侧边栏覆盖 */
+  .page {
+    max-width: calc(100% - 270px);
+    box-sizing: border-box;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sidebar-inner {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.important-dates-list li {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.important-dates-list li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.important-dates-list li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.important-dates-list li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.important-dates-list li:nth-child(4) {
+  animation-delay: 0.4s;
+}

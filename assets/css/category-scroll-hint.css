@@ -1,0 +1,33 @@
+/* 类别之间的滚动提示 */
+.category-scroll-hint {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1.5em;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  padding: 0 10px;
+}
+
+.category-scroll-hint.scrolled {
+  opacity: 0;
+}
+
+.hint-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+}
+
+.hint-icon {
+  padding: 0 10px;
+  color: #666;
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
+/* 当侧边栏只有一个屏幕高度时隐藏 */
+@media (max-height: 600px) {
+  .category-scroll-hint {
+    display: none;
+  }
+}

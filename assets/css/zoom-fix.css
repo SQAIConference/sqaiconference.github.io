@@ -1,0 +1,24 @@
+/* 
+ * 确保移动设备可以正常缩放的样式修复 
+ */
+
+/* 防止任何CSS可能阻止缩放 */
+html, body {
+  touch-action: manipulation; /* 允许平移和缩放手势 */
+}
+
+/* 确保内容可以缩放 */
+body {
+  -webkit-text-size-adjust: 100%; /* 在iOS上正确调整字体大小 */
+  text-size-adjust: 100%;
+}
+
+/* 确保触摸动作不受阻止 */
+* {
+  touch-action: pan-y pinch-zoom; /* 明确允许垂直平移和缩放手势 */
+}
+
+/* 修复某些可能影响缩放的交互元素 */
+input, textarea, select, button {
+  touch-action: manipulation;
+}
