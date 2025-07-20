@@ -1,0 +1,205 @@
+/*
+ * Mobile Navigation Improvements
+ * Enhanced responsive navigation for better mobile experience
+ */
+
+/* Mobile-first navigation styling */
+.masthead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--global-bg-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.masthead__inner-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  max-width: 100%;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--global-text-color);
+  z-index: 1001;
+}
+
+.mobile-menu-toggle:focus {
+  outline: 2px solid var(--global-link-color);
+  outline-offset: 2px;
+}
+
+/* Navigation menu styling */
+.masthead__menu {
+  display: flex;
+  align-items: center;
+}
+
+.masthead__menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.masthead__menu-item {
+  margin: 0 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.masthead__menu-item a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--global-text-color);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.masthead__menu-item a:hover,
+.masthead__menu-item a:focus {
+  background-color: var(--global-link-color);
+  color: white;
+  outline: none;
+}
+
+/* Mobile navigation styles */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .masthead__menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--global-bg-color);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+    border-right: 1px solid var(--global-border-color);
+  }
+  
+  .masthead__menu.is-open {
+    left: 0;
+  }
+  
+  .masthead__menu ul {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 4rem 0 2rem 0;
+    width: 100%;
+  }
+  
+  .masthead__menu-item {
+    margin: 0;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+  
+  .masthead__menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  .masthead__menu-item a {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 0;
+    white-space: normal;
+  }
+  
+  /* Mobile menu overlay */
+  .mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mobile-menu-overlay.is-open {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* Tablet navigation adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .masthead__inner-wrap {
+    padding: 0.75rem 2rem;
+  }
+  
+  .masthead__menu-item a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Large screen navigation */
+@media (min-width: 1025px) {
+  .masthead__inner-wrap {
+    padding: 1rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .masthead__menu-item a {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .masthead__menu,
+  .mobile-menu-overlay,
+  .masthead__menu-item a {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .masthead {
+    border-bottom: 2px solid currentColor;
+  }
+  
+  .masthead__menu-item a {
+    border: 1px solid transparent;
+  }
+  
+  .masthead__menu-item a:hover,
+  .masthead__menu-item a:focus {
+    border-color: currentColor;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+.masthead__menu-item a:focus-visible {
+  outline: 2px solid var(--global-link-color);
+  outline-offset: 2px;
+}

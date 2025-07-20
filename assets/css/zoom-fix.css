@@ -1,24 +1,104 @@
 /* 
- * 确保移动设备可以正常缩放的样式修复 
+ * Mobile Zoom and Touch Interaction Fixes
+ * Ensures proper zoom behavior and touch interactions on mobile devices
  */
 
-/* 防止任何CSS可能阻止缩放 */
-html, body {
-  touch-action: manipulation; /* 允许平移和缩放手势 */
-}
-
-/* 确保内容可以缩放 */
-body {
-  -webkit-text-size-adjust: 100%; /* 在iOS上正确调整字体大小 */
+/* Viewport configuration - prevent unwanted zoom restrictions */
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent iOS font size changes */
+  -ms-text-size-adjust: 100%; /* Prevent Windows Phone font size changes */
   text-size-adjust: 100%;
 }
 
-/* 确保触摸动作不受阻止 */
-* {
-  touch-action: pan-y pinch-zoom; /* 明确允许垂直平移和缩放手势 */
+/* Enable proper touch interactions */
+html, body {
+  touch-action: manipulation; /* Allows pinch-zoom and pan gestures */
+  -webkit-touch-callout: default; /* Allow callouts on iOS */
 }
 
-/* 修复某些可能影响缩放的交互元素 */
+/* Ensure content can be pinch-zoomed */
+* {
+  touch-action: pan-x pan-y pinch-zoom; /* Enable all standard touch gestures */
+}
+
+/* Form elements should allow manipulation */
 input, textarea, select, button {
   touch-action: manipulation;
+  -webkit-user-select: text; /* Allow text selection in form fields */
+  user-select: text;
+}
+
+/* Links and buttons should be easily tappable */
+a, button, [role="button"], [tabindex] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); /* Subtle tap highlight */
+}
+
+/* Prevent double-tap zoom on specific elements that handle their own interactions */
+.no-zoom {
+  touch-action: pan-x pan-y; /* Disable zoom for specific elements */
+}
+
+/* Ensure images and media can be zoomed */
+img, video, iframe, canvas, svg {
+  touch-action: auto; /* Allow all touch interactions including zoom */
+}
+
+/* Map containers should allow all interactions */
+.map-frame, .google-map, [class*="map"] {
+  touch-action: auto;
+}
+
+/* Better focus handling for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover states that don't work on touch */
+  a:hover, button:hover, .btn:hover {
+    /* Reset any hover-only styles */
+  }
+  
+  /* Increase touch target sizes */
+  a, button, input, select, textarea {
+    min-height: 44px; /* iOS Human Interface Guidelines */
+    min-width: 44px;
+  }
+  
+  /* Better spacing for touch targets */
+  .nav-item, .menu-item {
+    margin: 0.25em;
+  }
+}
+
+/* Accessibility: Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp images on high DPI displays */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Adjust layouts for landscape mobile devices */
+  .page__content {
+    padding-top: 1em;
+  }
+  
+  /* Reduce header height in landscape */
+  .masthead {
+    min-height: auto;
+  }
 }

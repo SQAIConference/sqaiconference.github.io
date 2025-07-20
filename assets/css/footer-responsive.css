@@ -1,0 +1,158 @@
+/*
+ * Mobile Footer Styling Improvements
+ * Better responsive footer layout and styling
+ */
+
+/* Footer base styles */
+.page__footer {
+  margin-top: auto;
+  padding: 2rem 0 1rem;
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--global-border-color);
+}
+
+.page__footer footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Footer content layout */
+.footer-content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+/* Social links styling */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--global-border-color);
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+  background: var(--global-link-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Footer text and links */
+.footer-text {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+}
+
+.footer-text a {
+  color: var(--global-link-color);
+  text-decoration: none;
+}
+
+.footer-text a:hover,
+.footer-text a:focus {
+  text-decoration: underline;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .page__footer {
+    padding: 1.5rem 0 1rem;
+  }
+  
+  .page__footer footer {
+    padding: 0 0.75rem;
+  }
+  
+  .footer-content {
+    gap: 1.5rem;
+  }
+  
+  .social-icons {
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  .social-icons {
+    justify-content: flex-start;
+  }
+  
+  .footer-text {
+    text-align: right;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1025px) {
+  .page__footer footer {
+    padding: 0 2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  
+  .social-icons {
+    justify-content: flex-start;
+  }
+  
+  .footer-text {
+    text-align: right;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .page__footer {
+    border-top: 2px solid currentColor;
+  }
+  
+  .social-icons a {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .social-icons a {
+    transition: none;
+  }
+  
+  .social-icons a:hover {
+    transform: none;
+  }
+}

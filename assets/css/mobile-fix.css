@@ -1,43 +1,91 @@
 /* 
- * 移动设备优化样式 
- * 解决在小屏幕设备上需要缩放的问题
+ * Mobile Device Optimizations
+ * Comprehensive mobile styling fixes for better responsiveness
  */
 
-/* 修复内容宽度问题，确保所有内容适应屏幕 */
+/* Prevent horizontal overflow on all devices */
 html, body {
   overflow-x: hidden;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
-.page__content {
+/* Global box-sizing fix */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure main content areas are responsive */
+.page__content, .page__inner-wrap, #main {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* 确保表格和其他宽内容适应屏幕 */
-table, iframe, img, .highlight {
+/* Responsive media elements */
+table, iframe, img, .highlight, pre, code {
   max-width: 100% !important;
   overflow-x: auto;
+  box-sizing: border-box;
 }
 
-/* 调整谷歌表格iframe */
-iframe[src*="docs.google.com"] {
+/* Better table responsiveness */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+table td, table th {
+  padding: 0.5em;
+  word-wrap: break-word;
+}
+
+/* Responsive iframe handling */
+iframe {
   width: 100% !important;
   max-width: 100% !important;
   display: block;
+  border: none;
 }
 
-/* 调整小屏幕上的卡片宽度 */
-@media (max-width: 576px) {
-  .member-card {
-    width: 100% !important;
-    max-width: 100% !important;
+iframe[src*="docs.google.com"] {
+  min-height: 400px;
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 768px) {
+  .masthead__inner-wrap {
+    padding: 0.5em;
   }
   
-  .committee-members {
-    justify-content: center;
+  .masthead__menu {
+    background-color: var(--global-bg-color);
+    border-bottom: 1px solid var(--global-border-color);
+  }
+  
+  .masthead__menu-item {
+    padding: 0.5em 0.75em;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Improved mobile card layouts */
+@media (max-width: 576px) {
+  .member-card, .feature-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 1em 0;
+  }
+  
+  .committee-members, .sqai-features {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   
   .member-photo {
@@ -46,39 +94,92 @@ iframe[src*="docs.google.com"] {
     margin: 0 auto;
   }
   
-  /* 调整导航按钮和链接在超小屏幕上的显示 */
+  /* Navigation improvements */
   .quick-nav-container {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding: 0 0.5em;
   }
   
   .quick-nav-row {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    gap: 0.5em;
   }
   
   .quick-nav-link {
-    margin: 5px;
+    margin: 0.25em;
     text-align: center;
+    flex: 1;
+    min-width: calc(50% - 0.5em);
+  }
+  
+  /* Better text scaling */
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.3;
   }
 }
 
-/* 调整特别小的屏幕 */
+/* Extra small screen optimizations */
 @media (max-width: 360px) {
-  h1, h2 {
+  h1, h2, h3 {
     word-break: break-word;
     hyphens: auto;
+    overflow-wrap: break-word;
   }
   
-  /* 减小内边距以节省空间 */
   .page__content {
-    padding: 1em 1em !important;
+    padding: 0.75em !important;
   }
   
-  /* 调整导航按钮 */
   .masthead__menu-item {
     padding: 0.4em 0.5em;
+    font-size: 0.9em;
+  }
+  
+  /* Compact form elements */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.5em;
+  }
+  
+  /* Smaller gaps and margins */
+  .sqai-features {
+    gap: 0.5em;
+  }
+  
+  .feature-card {
+    margin-bottom: 0.5em;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  a, button, .btn, .masthead__menu-item {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .feature-card:hover {
+    transform: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
   }
 }
