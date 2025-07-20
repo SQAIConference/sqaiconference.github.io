@@ -10,9 +10,9 @@ redirect_from:
 
 <!-- 首页图片已移至布局文件 default.html，无需在此重复插入 -->
 
-Welcome from the Chairs of SQAI 2026
-===
-It is with great pleasure that we welcome you to the <span style="white-space: nowrap;">**3rd International Symposium on Quantum Artificial Intelligence (SQAI)**</span>, hosted by the *Quantum Intelligence Society*, on June 26-28, 2026, in two locations: Taipei and Washington, D.C.
+<h1 data-i18n="welcome_title">Welcome from the Chairs of SQAI 2026</h1>
+
+<p data-i18n="welcome_content">It is with great pleasure that we welcome you to the <span style="white-space: nowrap;">**3rd International Symposium on Quantum Artificial Intelligence (SQAI)**</span>, hosted by the *Quantum Intelligence Society*, on June 26-28, 2026, in two locations: Taipei and Washington, D.C.</p>
 
 <style>
 .event-table-container {
