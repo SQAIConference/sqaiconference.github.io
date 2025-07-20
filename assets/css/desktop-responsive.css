@@ -1,0 +1,199 @@
+/* 
+ * Desktop Responsive Design Fixes
+ * Optimizations for larger screens and desktop layouts
+ */
+
+/* Desktop container and layout improvements */
+@media (min-width: 1024px) {
+  .page__inner-wrap, #main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+  
+  /* Better sidebar positioning */
+  .sidebar {
+    position: sticky;
+    top: 5em;
+    max-height: calc(100vh - 6em);
+    overflow-y: auto;
+  }
+  
+  /* Improved grid layouts for desktop */
+  .sqai-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    max-width: 1200px;
+    margin: 2em auto;
+  }
+  
+  .feature-card {
+    max-width: none;
+    height: auto;
+  }
+}
+
+/* Large desktop optimizations */
+@media (min-width: 1280px) {
+  .page__inner-wrap, #main {
+    max-width: 1400px;
+    padding: 0 3em;
+  }
+  
+  /* Three-column layout for large screens */
+  .sqai-features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5em;
+  }
+  
+  /* Better navigation spacing */
+  .masthead__inner-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+  }
+  
+  .masthead__menu-item {
+    padding: 0.75em 1.5em;
+    margin: 0 0.5em;
+  }
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 1600px) {
+  .page__inner-wrap, #main {
+    max-width: 1600px;
+    padding: 0 4em;
+  }
+  
+  /* Four-column layout for ultra-wide */
+  .sqai-features {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3em;
+  }
+  
+  .masthead__inner-wrap {
+    max-width: 1600px;
+    padding: 0.5em 4em;
+  }
+}
+
+/* Desktop-specific enhancements */
+@media (min-width: 768px) {
+  /* Better table layouts on desktop */
+  .event-table-container {
+    overflow-x: visible;
+    margin: 2rem auto;
+    max-width: 900px;
+  }
+  
+  .event-table {
+    font-size: 1rem;
+    min-width: auto;
+  }
+  
+  .event-table th,
+  .event-table td {
+    padding: 15px 20px;
+  }
+  
+  /* Enhanced hover effects for desktop */
+  .feature-card {
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  
+  /* Better navigation */
+  .masthead__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .masthead__menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .masthead__menu-item {
+    display: inline-block;
+    margin: 0 0.25em;
+    transition: all 0.3s ease;
+  }
+  
+  .masthead__menu-item:hover {
+    background-color: var(--global-link-color);
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+/* Print-friendly styles */
+@media print {
+  .masthead,
+  .sidebar,
+  .page__footer,
+  .page__share,
+  .page__related,
+  .sqai-dates-fixed-sidebar,
+  .mobile-dates-toggle,
+  .scroll-indicator-container,
+  .scroll-to-top {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .page__content {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .feature-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 1em;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .feature-img,
+  .carousel-slide img {
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .feature-card:hover {
+    transform: none;
+  }
+}
