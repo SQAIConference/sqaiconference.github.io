@@ -16,9 +16,10 @@ class I18nManager {
   async init() {
     try {
       await this.loadTranslations();
-      this.setupLanguageSwitcher();
       this.detectInitialLanguage();
+      this.setupLanguageSwitcher();
       this.applyTranslations();
+      this.updateLanguageSwitcher(); // Ensure button shows correct language
     } catch (error) {
       console.error('Failed to initialize i18n:', error);
     }

@@ -35,6 +35,7 @@
       "welcome_content": "It is with great pleasure that we welcome you to the 3rd International Symposium on Quantum Artificial Intelligence (SQAI), hosted by the Quantum Intelligence Society, on June 26-28, 2026, in two locations: Taipei and Washington, D.C.",
       "about_description": "As the boundaries between quantum computing, artificial intelligence, and interdisciplinary systems continue to blur, SQAI 2026 provides a unique platform to explore breakthroughs at the intersection of these transformative technologies. From quantum-enhanced learning algorithms to ethical design in intelligent systems, the conference will spotlight the most pressing challenges and visionary advances shaping the future of computation and cognition.",
       "conference_highlights": "SQAI 2026 will feature a rich lineup of keynote speeches, technical presentations, workshops, demos, and panel discussions, offering researchers, engineers, and practitioners a vibrant space to share insights, collaborate across domains, and chart new directions in AI and quantum research.",
+      "conference_innovation": "This year's conference emphasizes cross-disciplinary innovation, drawing participants from academia, industry, policy, and the open-source community. Our single-track format ensures that every presentation gets the spotlight it deserves and every attendee can engage deeply with the full spectrum of ideas presented.",
       "closing_message": "We are honored to host SQAI 2026 in the dynamic and culturally rich city of Taipei. We look forward to your contributions and to advancing the frontier of Quantum AI—together."
     },
     "zh": {
@@ -52,6 +53,7 @@
       "welcome_content": "我们非常高兴地欢迎您参加由量子智能学会主办的第三届国际量子人工智能研讨会（SQAI），会议将于2026年6月26-28日在台北和华盛顿特区两地举行。",
       "about_description": "随着量子计算、人工智能和跨学科系统之间的界限不断模糊，SQAI 2026为探索这些变革性技术交叉点的突破提供了独特的平台。从量子增强学习算法到智能系统的伦理设计，本次会议将聚焦影响计算和认知未来的最紧迫挑战和前瞻性进展。",
       "conference_highlights": "SQAI 2026将举办丰富的主题演讲、技术报告、研讨会、演示和小组讨论，为研究人员、工程师和从业者提供一个充满活力的空间，分享见解、跨领域合作，并为AI和量子研究开辟新方向。",
+      "conference_innovation": "今年的会议强调跨学科创新，吸引来自学术界、工业界、政策制定者和开源社区的参与者。我们的单轨制格式确保每个演讲都能得到应有的关注，每位与会者都能深入参与所展示的全部思想。",
       "closing_message": "我们很荣幸在充满活力和文化底蕴深厚的台北市举办SQAI 2026。我们期待您的贡献，共同推进量子AI的前沿发展。"
     },
     "es": {
@@ -69,6 +71,7 @@
       "welcome_content": "Es un gran placer darles la bienvenida al 3er Simposio Internacional de Inteligencia Artificial Cuántica (SQAI), organizado por la Sociedad de Inteligencia Cuántica, del 26 al 28 de junio de 2026, en dos ubicaciones: Taipei y Washington, D.C.",
       "about_description": "Mientras las fronteras entre la computación cuántica, la inteligencia artificial y los sistemas interdisciplinarios continúan difuminándose, SQAI 2026 proporciona una plataforma única para explorar avances en la intersección de estas tecnologías transformadoras. Desde algoritmos de aprendizaje mejorados cuánticamente hasta el diseño ético en sistemas inteligentes, la conferencia destacará los desafíos más apremiantes y los avances visionarios que moldean el futuro de la computación y la cognición.",
       "conference_highlights": "SQAI 2026 presentará una rica alineación de discursos magistrales, presentaciones técnicas, talleres, demostraciones y discusiones de panel, ofreciendo a investigadores, ingenieros y profesionales un espacio vibrante para compartir ideas, colaborar entre dominios y trazar nuevas direcciones en la investigación de IA y cuántica.",
+      "conference_innovation": "La conferencia de este año enfatiza la innovación interdisciplinaria, atrayendo participantes de la academia, la industria, las políticas públicas y la comunidad de código abierto. Nuestro formato de una sola pista asegura que cada presentación reciba la atención que merece y que cada asistente pueda comprometerse profundamente con todo el espectro de ideas presentadas.",
       "closing_message": "Nos honra organizar SQAI 2026 en la dinámica y culturalmente rica ciudad de Taipei. Esperamos sus contribuciones y avanzar juntos en la frontera de la IA Cuántica."
     }
   }
