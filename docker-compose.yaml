@@ -1,8 +1,23 @@
 services:
-  jekyll-site:
-    image: jekyll-site
+  sqai-website:
     build: .
-    volumes: [ .:/usr/src/app ]
-    ports: [ 4000:4000 ]
-    user: 1000:1000
-    command: jekyll serve -H 0.0.0.0 -w
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  # Development service
+  sqai-dev:
+    build:
+      context: .
+      target: build
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev -- --host
+    environment:
+      - NODE_ENV=development
