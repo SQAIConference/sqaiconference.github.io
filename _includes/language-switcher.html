@@ -19,11 +19,11 @@
           {% if current_lang == site.default_lang %}
             {% assign lang_url = "/" | append: lang | append: current_page %}
           {% else %}
-            {% assign lang_url = current_page | replace_first: "/" | append: current_lang, "/" | append: lang %}
+            {% assign lang_url = current_page | replace_first: "/" | append: current_lang | append: "/" | append: lang %}
           {% endif %}
         {% else %}
           {% if current_lang != site.default_lang %}
-            {% assign lang_url = current_page | replace_first: "/" | append: current_lang, "" %}
+            {% assign lang_url = current_page | replace_first: "/" | append: current_lang %}
           {% endif %}
         {% endif %}
         
