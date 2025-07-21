@@ -7,8 +7,11 @@
 # server process.
 
 # Basic Site Settings
+# Internationalization
 locale                   : "en-US"
-site_theme               : "light" # Only light theme is supported
+languages                : ["en", "es", "fr", "tr", "pt", "it", "zh", "zh-TW"]
+default_lang             : "en"
+site_theme               : "default" # default theme to match available theme files
 title                    : "Symposium on Quantum AI"
 title_separator          : "-"
 name                     : &name "Symposium on Quantum AI (SQAI)"

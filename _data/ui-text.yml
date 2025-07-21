@@ -120,17 +120,17 @@ fr: &DEFAULT_FR
   email_label                : "Email"
   recent_posts               : "Posts récents"
   undefined_wpm              : "Le paramètre words_per_minute n'est pas défini dans _config.yml"
-  comment_form_info          :
-  comment_form_comment_label :
-  comment_form_md_info       :
-  comment_form_name_label    :
-  comment_form_email_label   :
-  comment_form_website_label :
-  comment_btn_submit         :
-  comment_btn_submitted      :
-  comment_success_msg        :
-  comment_error_msg          :
-  loading_label              :
+  comment_form_info          : "Votre adresse e-mail ne sera pas publiée. Les champs obligatoires sont marqués"
+  comment_form_comment_label : "Commentaire"
+  comment_form_md_info       : "Markdown est pris en charge."
+  comment_form_name_label    : "Nom"
+  comment_form_email_label   : "Adresse e-mail"
+  comment_form_website_label : "Site web (optionnel)"
+  comment_btn_submit         : "Envoyer le commentaire"
+  comment_btn_submitted      : "Envoyé"
+  comment_success_msg        : "Merci pour votre commentaire ! Il sera affiché sur le site une fois approuvé."
+  comment_error_msg          : "Désolé, il y a eu une erreur avec votre soumission. Veuillez vous assurer que tous les champs obligatoires ont été remplis et réessayer."
+  loading_label              : "Chargement..."
 fr-FR:
   <<: *DEFAULT_FR
 fr-BE:
@@ -166,17 +166,17 @@ tr: &DEFAULT_TR
   email_label                : "E-posta"
   recent_posts               : "Son yazılar"
   undefined_wpm              : "_config.yml dosyasında tanımlanmamış words_per_minute parametresi"
-  comment_form_info          :
-  comment_form_comment_label :
-  comment_form_md_info       :
-  comment_form_name_label    :
-  comment_form_email_label   :
-  comment_form_website_label :
-  comment_btn_submit         :
-  comment_btn_submitted      :
-  comment_success_msg        :
-  comment_error_msg          :
-  loading_label              :
+  comment_form_info          : "E-posta adresiniz yayınlanmayacak. Gerekli alanlar işaretlenmiştir"
+  comment_form_comment_label : "Yorum"
+  comment_form_md_info       : "Markdown desteklenir."
+  comment_form_name_label    : "İsim"
+  comment_form_email_label   : "E-posta adresi"
+  comment_form_website_label : "Web sitesi (isteğe bağlı)"
+  comment_btn_submit         : "Yorum Gönder"
+  comment_btn_submitted      : "Gönderildi"
+  comment_success_msg        : "Yorumunuz için teşekkürler! Onaylandıktan sonra sitede görünecektir."
+  comment_error_msg          : "Üzgünüz, gönderiminizde bir hata oluştu. Lütfen tüm gerekli alanların doldurulduğundan emin olun ve tekrar deneyin."
+  loading_label              : "Yükleniyor..."
 tr-TR:
   <<: *DEFAULT_TR
 
@@ -252,17 +252,17 @@ it: &DEFAULT_IT
   email_label                : "Email"
   recent_posts               : "Articoli Recenti"
   undefined_wpm              : "Parametro words_per_minute non definito in _config.yml"
-  comment_form_info          :
-  comment_form_comment_label :
-  comment_form_md_info       :
-  comment_form_name_label    :
-  comment_form_email_label   :
-  comment_form_website_label :
-  comment_btn_submit         :
-  comment_btn_submitted      :
-  comment_success_msg        :
-  comment_error_msg          :
-  loading_label              :
+  comment_form_info          : "Il tuo indirizzo email non sarà pubblicato. I campi obbligatori sono contrassegnati"
+  comment_form_comment_label : "Commento"
+  comment_form_md_info       : "Markdown è supportato."
+  comment_form_name_label    : "Nome"
+  comment_form_email_label   : "Indirizzo email"
+  comment_form_website_label : "Sito web (opzionale)"
+  comment_btn_submit         : "Invia Commento"
+  comment_btn_submitted      : "Inviato"
+  comment_success_msg        : "Grazie per il tuo commento! Verrà mostrato sul sito una volta approvato."
+  comment_error_msg          : "Spiacenti, si è verificato un errore con il tuo invio. Assicurati che tutti i campi obbligatori siano stati completati e riprova."
+  loading_label              : "Caricamento..."
 it-IT:
   <<: *DEFAULT_IT
 
@@ -352,3 +352,294 @@ zh-TW:
 
 # Another locale
 # --------------
+
+# Custom SQAI-specific translations
+# ----------------------------------
+
+# Navigation and site-specific content
+en: &SQAI_EN
+  <<: *DEFAULT_EN
+  # Navigation
+  committees_nav             : "Committees"
+  authors_nav                : "Authors" 
+  program_nav                : "Program"
+  registration_nav           : "Registration"
+  sponsors_nav               : "Sponsors"
+  past_conferences_nav       : "Past Conferences"
+  
+  # Home page content
+  welcome_title              : "Welcome from the Chairs of SQAI 2026"
+  conference_description     : "International academic, business, and government conference dedicated to the advancement of Quantum AI research and application."
+  venue_taipei               : "Taipei"
+  venue_dc                   : "D.C."
+  venue_online               : "Online"
+  
+  # Event types
+  event_academic             : "Academic Conference"
+  event_business             : "Business Expo"
+  event_capitol              : "Capitol Summit"
+  event_digital              : "Digital Access"
+  
+  # Common labels
+  research_knowledge         : "Research & Knowledge Exchange"
+  industry_innovation        : "Industry & Innovation"
+  policy_leadership          : "Policy & Leadership"
+  global_participation       : "Global Participation"
+  
+  # Call for papers
+  cfp_title                  : "Call for Papers - SQAI 2026"
+  submit_paper               : "Submit Paper"
+  submission_guidelines      : "Submission Guidelines"
+  important_dates            : "Important Dates"
+  
+# Spanish translations
+es:
+  <<: *DEFAULT_ES
+  # Navigation
+  committees_nav             : "Comités"
+  authors_nav                : "Autores"
+  program_nav                : "Programa"
+  registration_nav           : "Registro"
+  sponsors_nav               : "Patrocinadores"
+  past_conferences_nav       : "Conferencias Anteriores"
+  
+  # Home page content
+  welcome_title              : "Bienvenida de los Presidentes de SQAI 2026"
+  conference_description     : "Conferencia internacional académica, empresarial y gubernamental dedicada al avance de la investigación y aplicación de IA cuántica."
+  venue_taipei               : "Taipéi"
+  venue_dc                   : "D.C."
+  venue_online               : "En línea"
+  
+  # Event types
+  event_academic             : "Conferencia Académica"
+  event_business             : "Exposición Empresarial"
+  event_capitol              : "Cumbre del Capitolio"
+  event_digital              : "Acceso Digital"
+  
+  # Common labels
+  research_knowledge         : "Investigación e Intercambio de Conocimiento"
+  industry_innovation        : "Industria e Innovación"
+  policy_leadership          : "Política y Liderazgo"
+  global_participation       : "Participación Global"
+  
+  # Call for papers
+  cfp_title                  : "Convocatoria de Artículos - SQAI 2026"
+  submit_paper               : "Enviar Artículo"
+  submission_guidelines      : "Directrices de Envío"
+  important_dates            : "Fechas Importantes"
+
+# French translations
+fr:
+  <<: *DEFAULT_FR
+  # Navigation
+  committees_nav             : "Comités"
+  authors_nav                : "Auteurs"
+  program_nav                : "Programme"
+  registration_nav           : "Inscription"
+  sponsors_nav               : "Sponsors"
+  past_conferences_nav       : "Conférences Passées"
+  
+  # Home page content
+  welcome_title              : "Bienvenue des Présidents de SQAI 2026"
+  conference_description     : "Conférence internationale académique, commerciale et gouvernementale dédiée à l'avancement de la recherche et application de l'IA quantique."
+  venue_taipei               : "Taipei"
+  venue_dc                   : "D.C."
+  venue_online               : "En ligne"
+  
+  # Event types
+  event_academic             : "Conférence Académique"
+  event_business             : "Exposition Commerciale"
+  event_capitol              : "Sommet du Capitole"
+  event_digital              : "Accès Numérique"
+  
+  # Common labels
+  research_knowledge         : "Recherche et Échange de Connaissances"
+  industry_innovation        : "Industrie et Innovation"
+  policy_leadership          : "Politique et Leadership"
+  global_participation       : "Participation Mondiale"
+  
+  # Call for papers
+  cfp_title                  : "Appel à Communications - SQAI 2026"
+  submit_paper               : "Soumettre un Article"
+  submission_guidelines      : "Directives de Soumission"
+  important_dates            : "Dates Importantes"
+
+# Turkish translations
+tr:
+  <<: *DEFAULT_TR
+  # Navigation
+  committees_nav             : "Komiteler"
+  authors_nav                : "Yazarlar"
+  program_nav                : "Program"
+  registration_nav           : "Kayıt"
+  sponsors_nav               : "Sponsorlar"
+  past_conferences_nav       : "Geçmiş Konferanslar"
+  
+  # Home page content
+  welcome_title              : "SQAI 2026 Başkanlarından Hoş Geldiniz"
+  conference_description     : "Kuantum AI araştırma ve uygulamasının ilerlemesine adanmış uluslararası akademik, iş ve devlet konferansı."
+  venue_taipei               : "Taipei"
+  venue_dc                   : "D.C."
+  venue_online               : "Çevrimiçi"
+  
+  # Event types
+  event_academic             : "Akademik Konferans"
+  event_business             : "İş Fuarı"
+  event_capitol              : "Kapitol Zirvesi"
+  event_digital              : "Dijital Erişim"
+  
+  # Common labels
+  research_knowledge         : "Araştırma ve Bilgi Alışverişi"
+  industry_innovation        : "Endüstri ve İnovasyon"
+  policy_leadership          : "Politika ve Liderlik"
+  global_participation       : "Küresel Katılım"
+  
+  # Call for papers
+  cfp_title                  : "Makale Çağrısı - SQAI 2026"
+  submit_paper               : "Makale Gönder"
+  submission_guidelines      : "Gönderim Kılavuzları"
+  important_dates            : "Önemli Tarihler"
+
+# Portuguese translations
+pt:
+  <<: *DEFAULT_PT
+  # Navigation
+  committees_nav             : "Comitês"
+  authors_nav                : "Autores"
+  program_nav                : "Programa"
+  registration_nav           : "Registro"
+  sponsors_nav               : "Patrocinadores"
+  past_conferences_nav       : "Conferências Anteriores"
+  
+  # Home page content
+  welcome_title              : "Boas-vindas dos Presidentes do SQAI 2026"
+  conference_description     : "Conferência internacional acadêmica, empresarial e governamental dedicada ao avanço da pesquisa e aplicação de IA quântica."
+  venue_taipei               : "Taipei"
+  venue_dc                   : "D.C."
+  venue_online               : "Online"
+  
+  # Event types
+  event_academic             : "Conferência Acadêmica"
+  event_business             : "Exposição Empresarial"
+  event_capitol              : "Cúpula do Capitólio"
+  event_digital              : "Acesso Digital"
+  
+  # Common labels
+  research_knowledge         : "Pesquisa e Troca de Conhecimento"
+  industry_innovation        : "Indústria e Inovação"
+  policy_leadership          : "Política e Liderança"
+  global_participation       : "Participação Global"
+  
+  # Call for papers
+  cfp_title                  : "Chamada de Artigos - SQAI 2026"
+  submit_paper               : "Enviar Artigo"
+  submission_guidelines      : "Diretrizes de Submissão"
+  important_dates            : "Datas Importantes"
+
+# Italian translations
+it:
+  <<: *DEFAULT_IT
+  # Navigation
+  committees_nav             : "Comitati"
+  authors_nav                : "Autori"
+  program_nav                : "Programma"
+  registration_nav           : "Registrazione"
+  sponsors_nav               : "Sponsor"
+  past_conferences_nav       : "Conferenze Passate"
+  
+  # Home page content
+  welcome_title              : "Benvenuto dai Presidenti di SQAI 2026"
+  conference_description     : "Conferenza internazionale accademica, aziendale e governativa dedicata all'avanzamento della ricerca e applicazione dell'IA quantistica."
+  venue_taipei               : "Taipei"
+  venue_dc                   : "D.C."
+  venue_online               : "Online"
+  
+  # Event types
+  event_academic             : "Conferenza Accademica"
+  event_business             : "Esposizione Aziendale"
+  event_capitol              : "Vertice del Campidoglio"
+  event_digital              : "Accesso Digitale"
+  
+  # Common labels
+  research_knowledge         : "Ricerca e Scambio di Conoscenze"
+  industry_innovation        : "Industria e Innovazione"
+  policy_leadership          : "Politica e Leadership"
+  global_participation       : "Partecipazione Globale"
+  
+  # Call for papers
+  cfp_title                  : "Chiamata per Articoli - SQAI 2026"
+  submit_paper               : "Invia Articolo"
+  submission_guidelines      : "Linee Guida per la Sottomissione"
+  important_dates            : "Date Importanti"
+
+# Chinese Simplified translations
+zh:
+  <<: *DEFAULT_ZH
+  # Navigation
+  committees_nav             : "委员会"
+  authors_nav                : "作者"
+  program_nav                : "议程"
+  registration_nav           : "注册"
+  sponsors_nav               : "赞助商"
+  past_conferences_nav       : "往届会议"
+  
+  # Home page content
+  welcome_title              : "SQAI 2026主席致辞"
+  conference_description     : "致力于推进量子人工智能研究与应用的国际学术、商业和政府会议。"
+  venue_taipei               : "台北"
+  venue_dc                   : "华盛顿特区"
+  venue_online               : "在线"
+  
+  # Event types
+  event_academic             : "学术会议"
+  event_business             : "商业博览会"
+  event_capitol              : "国会山峰会"
+  event_digital              : "数字接入"
+  
+  # Common labels
+  research_knowledge         : "研究与知识交流"
+  industry_innovation        : "产业与创新"
+  policy_leadership          : "政策与领导力"
+  global_participation       : "全球参与"
+  
+  # Call for papers
+  cfp_title                  : "征稿启事 - SQAI 2026"
+  submit_paper               : "提交论文"
+  submission_guidelines      : "投稿指南"
+  important_dates            : "重要日期"
+
+# Chinese Traditional translations
+zh-TW:
+  <<: *DEFAULT_ZH_HK
+  # Navigation
+  committees_nav             : "委員會"
+  authors_nav                : "作者"
+  program_nav                : "議程"
+  registration_nav           : "註冊"
+  sponsors_nav               : "贊助商"
+  past_conferences_nav       : "歷屆會議"
+  
+  # Home page content
+  welcome_title              : "SQAI 2026主席致辭"
+  conference_description     : "致力於推進量子人工智慧研究與應用的國際學術、商業和政府會議。"
+  venue_taipei               : "台北"
+  venue_dc                   : "華盛頓特區"
+  venue_online               : "線上"
+  
+  # Event types
+  event_academic             : "學術會議"
+  event_business             : "商業博覽會"
+  event_capitol              : "國會山峰會"
+  event_digital              : "數位存取"
+  
+  # Common labels
+  research_knowledge         : "研究與知識交流"
+  industry_innovation        : "產業與創新"
+  policy_leadership          : "政策與領導力"
+  global_participation       : "全球參與"
+  
+  # Call for papers
+  cfp_title                  : "徵稿啟事 - SQAI 2026"
+  submit_paper               : "提交論文"
+  submission_guidelines      : "投稿指南"
+  important_dates            : "重要日期"

@@ -1,0 +1,195 @@
+<!-- Language Switcher Component -->
+{% assign t = site.data.ui-text[site.locale] | default: site.data.ui-text[site.default_lang] %}
+
+<div class="language-switcher">
+  <div class="language-dropdown">
+    <button class="language-btn" onclick="toggleLanguageDropdown()">
+      <i class="fas fa-globe"></i>
+      <span class="current-lang">{{ page.lang | default: site.default_lang | upcase }}</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    
+    <div class="language-menu" id="languageMenu">
+      {% assign current_page = page.url %}
+      {% assign current_lang = page.lang | default: site.default_lang %}
+      
+      {% for lang in site.languages %}
+        {% assign lang_url = current_page %}
+        {% if lang != site.default_lang %}
+          {% if current_lang == site.default_lang %}
+            {% assign lang_url = "/" | append: lang | append: current_page %}
+          {% else %}
+            {% assign lang_url = current_page | replace_first: "/" | append: current_lang, "/" | append: lang %}
+          {% endif %}
+        {% else %}
+          {% if current_lang != site.default_lang %}
+            {% assign lang_url = current_page | replace_first: "/" | append: current_lang, "" %}
+          {% endif %}
+        {% endif %}
+        
+        <a href="{{ lang_url | relative_url }}" 
+           class="language-option {% if lang == current_lang %}active{% endif %}"
+           data-lang="{{ lang }}">
+          <span class="flag flag-{{ lang }}"></span>
+          <span class="lang-name">
+            {% case lang %}
+              {% when 'en' %}English
+              {% when 'es' %}Español
+              {% when 'fr' %}Français
+              {% when 'tr' %}Türkçe
+              {% when 'pt' %}Português
+              {% when 'it' %}Italiano
+              {% when 'zh' %}中文 (简体)
+              {% when 'zh-TW' %}中文 (繁體)
+            {% endcase %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleLanguageDropdown() {
+  const menu = document.getElementById('languageMenu');
+  menu.classList.toggle('show');
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    const switcher = document.querySelector('.language-switcher');
+    if (!switcher.contains(event.target)) {
+      menu.classList.remove('show');
+    }
+  });
+}
+
+// Close dropdown on escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    document.getElementById('languageMenu').classList.remove('show');
+  }
+});
+</script>
+
+<style>
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.language-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--global-text-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.current-lang {
+  font-weight: 600;
+  min-width: 20px;
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+}
+
+.language-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--global-text-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--global-border-color);
+  transition: background-color 0.2s ease;
+}
+
+.language-option:last-child {
+  border-bottom: none;
+}
+
+.language-option:hover {
+  background-color: rgba(3, 102, 214, 0.1);
+}
+
+.language-option.active {
+  background-color: rgba(3, 102, 214, 0.15);
+  font-weight: 600;
+}
+
+.flag {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+
+/* Flag styling with emoji fallback */
+.flag-en::before { content: "🇺🇸"; }
+.flag-es::before { content: "🇪🇸"; }
+.flag-fr::before { content: "🇫🇷"; }
+.flag-tr::before { content: "🇹🇷"; }
+.flag-pt::before { content: "🇵🇹"; }
+.flag-it::before { content: "🇮🇹"; }
+.flag-zh::before { content: "🇨🇳"; }
+.flag-zh-TW::before { content: "🇹🇼"; }
+
+.lang-name {
+  font-size: 0.9rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .language-switcher {
+    position: static;
+  }
+  
+  .language-menu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8px 8px 0 0;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .language-option {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
+</style>
