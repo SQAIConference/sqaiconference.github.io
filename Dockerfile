@@ -1,36 +1,33 @@
-# Base image: Ruby with necessary dependencies for Jekyll
-FROM ruby:3.2
+# Multi-stage build for React TypeScript application
+FROM node:20-alpine AS build
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json ./
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    nodejs \
-    && rm -rf /var/lib/apt/lists/*
+RUN npm ci --only=production
 
+# Copy source code
+COPY . .
 
-# Create a non-root user with UID 1000
-RUN groupadd -g 1000 vscode && \
-    useradd -m -u 1000 -g vscode vscode
+# Build the application
+RUN npm run build
 
-# Set the working directory
-WORKDIR /usr/src/app
+# Production stage
+FROM nginx:alpine
 
-# Set permissions for the working directory
-RUN chown -R vscode:vscode /usr/src/app
+# Copy built assets from build stage
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Switch to the non-root user
-USER vscode
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy Gemfile into the container (necessary for `bundle install`)
-COPY Gemfile ./
+# Expose port 80
+EXPOSE 80
 
-
-
-# Install bundler and dependencies
-RUN gem install connection_pool:2.5.0
-RUN gem install bundler:2.3.26
-RUN bundle install
-
-# Command to serve the Jekyll site
-CMD ["jekyll", "serve", "-H", "0.0.0.0", "-w"]
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
 

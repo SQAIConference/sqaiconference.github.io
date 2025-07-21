@@ -1,41 +1,53 @@
 {
-  "name": "academic-pages",
-  "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
+  "name": "sqai-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Symposium on Quantum AI (SQAI) - Official Conference Website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "docker:build": "docker build -t sqai-website .",
+    "docker:run": "docker run -p 3000:80 sqai-website",
+    "docker:dev": "docker-compose up sqai-dev"
   },
   "keywords": [
-    "jekyll",
-    "theme",
-    "minimal"
+    "quantum-ai",
+    "conference",
+    "symposium",
+    "react",
+    "typescript",
+    "material-ui"
   ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuantumIntelligenceSociety/QuantumIntelligenceSociety.github.io"
   },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
+  "homepage": "https://QuantumIntelligenceSociety.github.io",
   "dependencies": {
-    "fitvids": "^2.1.1",
-    "jquery": "^3.7.1",
-    "jquery-smooth-scroll": "^2.2.0",
-    "magnific-popup": "^1.2.0"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.18.0",
+    "@mui/lab": "^5.0.0-alpha.173",
+    "@mui/material": "^5.18.0",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.0"
   },
   "devDependencies": {
-    "onchange": "^7.1.0",
-    "uglify-js": "^3.17.4"
-  },
-  "scripts": {
-    "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/fitvids/dist/fitvids.min.js node_modules/magnific-popup/dist/jquery.magnific-popup.min.js node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js -c -m -o assets/js/main.min.js",
-    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify"
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
   }
 }
