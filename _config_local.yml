@@ -1,0 +1,81 @@
+# Local development configuration
+# This config is for testing only and should not be deployed
+
+# Basic Site Settings
+locale                   : "en-US"
+languages                : ["en", "es", "fr", "tr", "pt", "it", "zh", "zh-TW"]
+default_lang             : "en"
+site_theme               : "default"
+title                    : "Symposium on Quantum AI"
+title_separator          : "-"
+name                     : &name "Symposium on Quantum AI (SQAI)"
+description              : &description "International academic, business, and government conference dedicated to the advancement of Quantum AI research and application."
+url                      : http://localhost:4000
+baseurl                  : ""
+repository               : "QuantumIntelligenceSociety/QuantumIntelligenceSociety.github.io"
+
+# Disable GitHub API dependent features for local testing
+github:
+  is_project_page: false
+  is_user_page: false
+
+# Site Author
+author:
+  avatar           : "profile.png"
+  name             : "SQAI"
+  bio              : "Academic, business, and government conference dedicated to the advancement of Quantum AI research and application."
+  location         : "Washington D.C."
+  email            : "info@sqai.org"
+
+# Basic plugins only
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Etc/UTC
+
+# Collections
+collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - vendor
+  - .bundle
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - yarn.lock

@@ -1,0 +1,18 @@
+{% comment %}
+i18n helper for getting translated text
+Usage: {% include i18n.html key="welcome_title" %}
+{% endcomment %}
+
+{% assign current_lang = page.lang | default: site.default_lang %}
+{% assign t = site.data.ui-text[current_lang] | default: site.data.ui-text[site.default_lang] %}
+
+{% if include.key %}
+  {% assign translated_text = t[include.key] %}
+  {% if translated_text %}
+    {{ translated_text }}
+  {% else %}
+    {% comment %}Fallback to default language{% endcomment %}
+    {% assign fallback_t = site.data.ui-text[site.default_lang] %}
+    {{ fallback_t[include.key] | default: include.key }}
+  {% endif %}
+{% endif %}

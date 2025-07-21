@@ -1,0 +1,122 @@
+# Multi-language navigation configuration
+# The main navigation will be dynamically generated based on the current language
+
+# English navigation (default)
+en:
+  - title: "Committees"
+    url: /committees/
+  - title: "Authors"
+    url: /cfp/
+  - title: "Program"
+    url: /program/
+  - title: "Registration"
+    url: /registration/
+  - title: "Sponsors"
+    url: /sponsors/
+  - title: "Past Conferences"
+    url: /past/
+
+# Spanish navigation
+es:
+  - title: "Comités"
+    url: /es/committees/
+  - title: "Autores"
+    url: /es/cfp/
+  - title: "Programa"
+    url: /es/program/
+  - title: "Registro"
+    url: /es/registration/
+  - title: "Patrocinadores"
+    url: /es/sponsors/
+  - title: "Conferencias Anteriores"
+    url: /es/past/
+
+# French navigation
+fr:
+  - title: "Comités"
+    url: /fr/committees/
+  - title: "Auteurs"
+    url: /fr/cfp/
+  - title: "Programme"
+    url: /fr/program/
+  - title: "Inscription"
+    url: /fr/registration/
+  - title: "Sponsors"
+    url: /fr/sponsors/
+  - title: "Conférences Passées"
+    url: /fr/past/
+
+# Turkish navigation
+tr:
+  - title: "Komiteler"
+    url: /tr/committees/
+  - title: "Yazarlar"
+    url: /tr/cfp/
+  - title: "Program"
+    url: /tr/program/
+  - title: "Kayıt"
+    url: /tr/registration/
+  - title: "Sponsorlar"
+    url: /tr/sponsors/
+  - title: "Geçmiş Konferanslar"
+    url: /tr/past/
+
+# Portuguese navigation
+pt:
+  - title: "Comitês"
+    url: /pt/committees/
+  - title: "Autores"
+    url: /pt/cfp/
+  - title: "Programa"
+    url: /pt/program/
+  - title: "Registro"
+    url: /pt/registration/
+  - title: "Patrocinadores"
+    url: /pt/sponsors/
+  - title: "Conferências Anteriores"
+    url: /pt/past/
+
+# Italian navigation
+it:
+  - title: "Comitati"
+    url: /it/committees/
+  - title: "Autori"
+    url: /it/cfp/
+  - title: "Programma"
+    url: /it/program/
+  - title: "Registrazione"
+    url: /it/registration/
+  - title: "Sponsor"
+    url: /it/sponsors/
+  - title: "Conferenze Passate"
+    url: /it/past/
+
+# Chinese Simplified navigation
+zh:
+  - title: "委员会"
+    url: /zh/committees/
+  - title: "作者"
+    url: /zh/cfp/
+  - title: "议程"
+    url: /zh/program/
+  - title: "注册"
+    url: /zh/registration/
+  - title: "赞助商"
+    url: /zh/sponsors/
+  - title: "往届会议"
+    url: /zh/past/
+
+# Chinese Traditional navigation
+zh-TW:
+  - title: "委員會"
+    url: /zh-TW/committees/
+  - title: "作者"
+    url: /zh-TW/cfp/
+  - title: "議程"
+    url: /zh-TW/program/
+  - title: "註冊"
+    url: /zh-TW/registration/
+  - title: "贊助商"
+    url: /zh-TW/sponsors/
+  - title: "歷屆會議"
+    url: /zh-TW/past/
