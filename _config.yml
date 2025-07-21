@@ -16,7 +16,7 @@ title                    : "Symposium on Quantum AI"
 title_separator          : "-"
 name                     : &name "Symposium on Quantum AI (SQAI)"
 description              : &description "International academic, business, and government conference dedicated to the advancement of Quantum AI research and application."
-url                      : https://QuantumIntelligenceSociety.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : http://54.82.189.75:4000 #https://QuantumIntelligenceSociety.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "QuantumIntelligenceSociety/QuantumIntelligenceSociety.github.io"
 
