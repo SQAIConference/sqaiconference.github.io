@@ -124,6 +124,24 @@ const Registration = () => {
           ))}
         </Grid>
 
+        <Box className="america250-notice" sx={{
+          my: 4,
+          p: 3,
+          background: 'linear-gradient(135deg, #0366d6, #2196f3)',
+          borderRadius: 2,
+          color: 'white',
+          textAlign: 'center',
+          boxShadow: '0 2px 8px rgba(0,102,214,0.2)'
+        }}>
+          <strong>
+            <i className="fas fa-flag-usa" style={{ marginRight: 8 }}></i>
+            America's 250th Anniversary
+          </strong>
+          <div style={{ marginTop: 6 }}>
+            Special registration rates and commemorative events for the 2026 semiquincentennial celebration.
+          </div>
+        </Box>
+
         <Typography variant="h4" component="h2" gutterBottom sx={{ mb: 3 }}>
           Important Information
         </Typography>

@@ -9,6 +9,7 @@ import Program from './pages/Program';
 import Registration from './pages/Registration';
 import Sponsors from './pages/Sponsors';
 import PastConferences from './pages/PastConferences';
+import About from './pages/About';
 
 const theme = createTheme({
   palette: {
@@ -62,7 +63,8 @@ function App() {
           <Navbar />
           <Box component="main" sx={{ flexGrow: 1, mt: 8 }}>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<About />} />
+              <Route path="/about" element={<About />} />
               <Route path="/committees" element={<Committees />} />
               <Route path="/cfp" element={<CallForPapers />} />
               <Route path="/program" element={<Program />} />

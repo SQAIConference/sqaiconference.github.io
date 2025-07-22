@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# SQAI Website – React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for the Symposium on Quantum AI (SQAI) website, built with React, TypeScript, and Vite.  
+It is a migration from the original Jekyll/Markdown-based site to a modern React SPA.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (version 18 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js) or [yarn](https://yarnpkg.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository:**
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+   ```sh
+   git clone https://github.com/QuantumIntelligenceSociety/QuantumIntelligenceSociety.github.io.git
+   cd QuantumIntelligenceSociety.github.io
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+### Running the Development Server
+
+Start the local development server with hot reloading:
+
+```sh
+npm run dev
+# or
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- The site will be available at [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Building for Production
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To create a production build:
+
+```sh
+npm run build
+# or
+yarn build
+```
+
+- The output will be in the `dist/` directory.
+
+### Previewing the Production Build
+
+To locally preview the production build:
+
+```sh
+npm run preview
+# or
+yarn preview
+```
+
+### Linting
+
+To check code quality with ESLint:
+
+```sh
+npm run lint
+# or
+yarn lint
+```
+
+## Project Structure
+
+- `src/` – React source code (pages, components, styles)
+- `public/` – Static assets (images, files, etc.)
+- `package.json` – Project dependencies and scripts
+
+## Deployment
+
+This project is designed for static hosting (e.g., GitHub Pages, Netlify, Vercel).  
+After building, deploy the contents of the `dist/` folder.
+
+## Additional Notes
+
+- All images and downloadable files should be placed in the `public/` directory.
+- For any issues or questions, please open an issue or contact info@sqai.org.
+
+---
 ```
